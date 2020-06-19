@@ -113,7 +113,7 @@ async def download(dryb):
         await dryb.edit("Processing ...")
         input_str = dryb.pattern_match.group(1)
         if CLIENT_ID is None or CLIENT_SECRET is None:
-            return false
+            return False
         if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
             os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
             required_file_name = None
