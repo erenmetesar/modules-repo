@@ -25,7 +25,7 @@ class Android:
             "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/stable.json",
             "Beta":
             "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json",
-            "Beta":
+            "Canary":
             "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/canary/canary.json"
         }
         releases = '<b>Latest Magisk Releases:</b>\n\n'
