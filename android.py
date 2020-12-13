@@ -32,9 +32,10 @@ class Android:
         for name, release_url in magisk_dict.items():
             data = get(release_url).json()
             if name == "Canary":
-                releases += f"""{name}: <a href='https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/{data["magisk"]["link"]}'>ZIP v{data["magisk"]["version"]}</a> | """ \
-                            f"""<a href='https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/{data["app"]["link"]}'>APP v{data["app"]["version"]}</a> | """ \
-                            f"""<a href='{https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/data["uninstaller"]["link"]}'>Uninstaller</a>\n"""
+                canaryuri = "https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/"
+                releases += f"""{name}: <a href='{canaryuri + data["magisk"]["link"]}'>ZIP v{data["magisk"]["version"]}</a> | """ \
+                            f"""<a href='{canaryuri + data["app"]["link"]}'>APP v{data["app"]["version"]}</a> | """ \
+                            f"""<a href='{canaryuri + data["uninstaller"]["link"]}'>Uninstaller</a>\n"""
             else:
                 releases += f"""{name}: <a href='{data["magisk"]["link"]}'>ZIP v{data["magisk"]["version"]}</a> | """ \
                             f"""<a href='{data["app"]["link"]}'>APP v{data["app"]["version"]}</a> | """ \
