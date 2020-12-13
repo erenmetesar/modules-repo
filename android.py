@@ -26,7 +26,7 @@ class Android:
             "Beta":
             "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json",
             "Canary":
-            "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/canary/canary.json"
+            "https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/canary.json"
         }
         releases = '<b>Latest Magisk Releases:</b>\n\n'
         for name, release_url in magisk_dict.items():
