@@ -24,14 +24,21 @@ class Android:
             "Stable":
             "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/stable.json",
             "Beta":
-            "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json"
+            "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json",
+            "Beta":
+            "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/canary/canary.json"
         }
         releases = '<b>Latest Magisk Releases:</b>\n\n'
         for name, release_url in magisk_dict.items():
             data = get(release_url).json()
-            releases += f"""{name}: <a href='{data["magisk"]["link"]}'>ZIP v{data["magisk"]["version"]}</a> | """ \
-                        f"""<a href='{data["app"]["link"]}'>APP v{data["app"]["version"]}</a> | """ \
-                        f"""<a href='{data["uninstaller"]["link"]}'>Uninstaller</a>\n"""
+            if name == "Canary":
+                releases += f"""{name}: <a href='https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/{data["magisk"]["link"]}'>ZIP v{data["magisk"]["version"]}</a> | """ \
+                            f"""<a href='https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/{data["app"]["link"]}'>APP v{data["app"]["version"]}</a> | """ \
+                            f"""<a href='{https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/data["uninstaller"]["link"]}'>Uninstaller</a>\n"""
+            else:
+                releases += f"""{name}: <a href='{data["magisk"]["link"]}'>ZIP v{data["magisk"]["version"]}</a> | """ \
+                            f"""<a href='{data["app"]["link"]}'>APP v{data["app"]["version"]}</a> | """ \
+                            f"""<a href='{data["uninstaller"]["link"]}'>Uninstaller</a>\n"""
         await request.edit(releases)
 
 
