@@ -1,4 +1,5 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+ # Copyright (C) 2019 The Raphielscape Company LLC.
+
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,13 +24,9 @@ class Android:
             "Stable":
             "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/stable.json",
             "Beta":
-            "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json",
-            "Canary (Release)":
-            "https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/release.json",
-            "Canary (Debug)":
-            "https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/debug.json"
+            "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json"
         }
-        releases = 'Latest Magisk Releases:\n'
+        releases = '<b>Latest Magisk Releases:</b>\n\n'
         for name, release_url in magisk_dict.items():
             data = get(release_url).json()
             releases += f"""{name}: <a href='{data["magisk"]["link"]}'>ZIP v{data["magisk"]["version"]}</a> | """ \
